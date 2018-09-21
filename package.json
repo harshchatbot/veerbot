@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "config" : { "port" : "5000" }
+    "config" : { "port" : "5000" },
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
