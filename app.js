@@ -16,7 +16,8 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),
-  request = require('request');
+  request = require('request'),
+  App = require('actions-on-google').DialogFlowApp;
  // Bootbot = require('bot');
 
 var app = express();
@@ -474,6 +475,24 @@ function handleMessage(message) {
 
 
 
+  
+  
+  
+  exports.addnumbers = functions.https.onRequest((request, response)  == {
+    let app = new App({request, response});
+  
+    app.tell("Hello from Harsh");
+  
+});
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
@@ -900,6 +919,9 @@ function callSendAPI(messageData) {
     }
   });
 }
+
+
+
 
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid
