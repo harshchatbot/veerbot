@@ -18,7 +18,7 @@ const
   https = require('https'),
   request = require('request'),
   {dialogflow} = require('actions-on-google'),
-  app = dialogflow({debug: true}),
+  app1 = dialogflow({debug: true}),
   App = require('actions-on-google').DialogFlowApp;
  // Bootbot = require('bot');
 
@@ -494,9 +494,9 @@ function handleMessage(message) {
   
   
   exports.addnumbers = functions.https.onRequest((request, response)  => {
-    let app = new App({request, response});
+    let app1 = new App({request, response});
   
-    app.tell("Hello from Harsh");
+    app1.tell("Hello from Harsh");
   
 });
   
