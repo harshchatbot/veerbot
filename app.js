@@ -16,24 +16,8 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),
-  request = require('request'),
-  {dialogflow} = require('actions-on-google'),
-  app1 = dialogflow({debug: true}),
-  App = require('actions-on-google').DialogFlowApp;
+  request = require('request');
  // Bootbot = require('bot');
-
-
-
-
-/**
- * Dialogflow Parameters
- * {@link https://dialogflow.com/docs/actions-and-parameters#parameters}
- */
-
-
-
-
-
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -490,24 +474,6 @@ function handleMessage(message) {
 
 
 
-  
-  
-  
-  exports.addnumbers = functions.https.onRequest((request, response)  => {
-    let app1 = new App({request, response});
-  
-    app1.tell("Hello from Harsh");
-  
-});
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
 
 
@@ -934,9 +900,6 @@ function callSendAPI(messageData) {
     }
   });
 }
-
-
-
 
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid
