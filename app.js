@@ -478,7 +478,7 @@ function handleMessage(message) {
   
   
   
-  exports.addnumbers = functions.https.onRequest((request, response)  == {
+  exports.addnumbers = functions.https.onRequest((request, response)  => {
     let app = new App({request, response});
   
     app.tell("Hello from Harsh");
