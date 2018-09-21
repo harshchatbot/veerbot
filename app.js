@@ -17,8 +17,23 @@ const
   express = require('express'),
   https = require('https'),
   request = require('request'),
+  {dialogflow} = require('actions-on-google'),
+  app = dialogflow({debug: true}),
   App = require('actions-on-google').DialogFlowApp;
  // Bootbot = require('bot');
+
+
+
+
+/**
+ * Dialogflow Parameters
+ * {@link https://dialogflow.com/docs/actions-and-parameters#parameters}
+ */
+
+
+
+
+
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
