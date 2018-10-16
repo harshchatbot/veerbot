@@ -1,6 +1,6 @@
 {
     "appSecret": "9f786b586c42f86698972e1b7c4a17b1",
-    "pageAccessToken": "EAAWrrTFtaVcBAIn3VPPYuxtdPXyWRKGZAZAZBWDDmXsrsIffDPybRszxEfzmQfESiVDCMzHVi0uDhyDqZCA4b0mKOGP11hHHI3XZBV2Faxd99zKI0xTL1v3YVh4cIZCkColZCuCudT8IWN5VADH8AmSK8WqZCQ8tZC0p2w1AKYbbZBZBQZDZD",
+    "pageAccessToken": "EAAC52KZCQJrYBAGkDuRyFUxwZADXIGV7rWqV9rZAH5u4eXqS65Mns0BVYefwNBgPiKHy4GQidGc7Jc0ZArEJQdYvbGV3rrGXwCWqxXibQJbLc7actHltUBw5YHlgMRW3wppux6LENmtyuLsnpf3ZCZCTiCFAsdEZCwZCUZAzmfQgM2AZDZD",
     "validationToken": "TOKEN",
-    "serverURL": "https://veerbot.herokuapp.com"
+    "serverURL": "https://git.heroku.com/veerbot.git/webhook"
 }
