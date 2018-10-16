@@ -1,6 +1,6 @@
 {
     "appSecret": "9f786b586c42f86698972e1b7c4a17b1",
-    "pageAccessToken": "EAAC52KZCQJrYBAPa9PKzV9Ev7W30NpnmcvP5TSKJdZAgGVkjfhmUO1lZCvFqSGf4xMmaVSZCUgMUJjcyin4lhRG2YhhYRw8PGojY8fHUwSBn9OE51Uj9NTZA4jrXdC0pe2ZB1FMeZAiQsD9ZAHBC4ZAgJqHya9UZAZCUsBVdCuDwSehNAZDZD",
+    "pageAccessToken": "EAAWrrTFtaVcBAIn3VPPYuxtdPXyWRKGZAZAZBWDDmXsrsIffDPybRszxEfzmQfESiVDCMzHVi0uDhyDqZCA4b0mKOGP11hHHI3XZBV2Faxd99zKI0xTL1v3YVh4cIZCkColZCuCudT8IWN5VADH8AmSK8WqZCQ8tZC0p2w1AKYbbZBZBQZDZD",
     "validationToken": "TOKEN",
-    "serverURL": "https://bots.dialogflow.com/facebook/9f32525d-d2c6-4b9e-a2a8-9fa85e8d92d5/webhook"
+    "serverURL": "https://veerbot.herokuapp.com"
 }
