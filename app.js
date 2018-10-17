@@ -475,7 +475,7 @@ recipient: {
   message: {
   
   
-  	sendResponse('The current weather in ' + location.city + ', ' + location.region + ' is ' + info.temp + ' degrees.');
+  	
  
   console.log('The current weather in ' + location.city + ', ' + location.region + ' is ' + info.temp + ' degrees.');
 
