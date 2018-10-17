@@ -463,24 +463,7 @@ function receivedAccountLink(event) {
 /*
 *yahooweatherapi var define
 */
-var YQL = require('yql');
-var query = new YQL('select * from weather.forecast where (location = 94089)');
 
-query.exec(function weather(err, data) {
-  var location = data.query.results.channel.location;
-  var info = data.query.results.channel.item.condition;
-recipient: {
-      id: recipientId
-    }
-  message: {
-  
-  
-  	
- 
-  console.log('The current weather in ' + location.city + ', ' + location.region + ' is ' + info.temp + ' degrees.');
-
-}
-});
 
 
 
