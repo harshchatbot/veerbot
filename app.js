@@ -22,11 +22,6 @@ const
   request = require('request');
 
 
-
-
-
-
-
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
@@ -282,16 +277,6 @@ function receivedMessage(event) {
 
       
 
-
-case 'weather':
-        weather(senderID);
-        break;
-
-
-
-
-
-
       case 'image':
         requiresServerURL(sendImageMessage, [senderID]);
         break;
@@ -441,44 +426,6 @@ function receivedAccountLink(event) {
     "and auth code %s ", senderID, status, authCode);
 }
 
-
-
-
-
-
-
-
-
-
-/*
-*yahooweather api call
-*/
-
-
-
-
-
-
-
-/*
-*yahooweatherapi var define
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
  * If users came here through testdrive, they need to configure the server URL
  * in default.json before they can access local resources likes images/videos.
@@ -500,7 +447,7 @@ Once you've finished these steps, try typing “video” or “image”.
       }
     }
 
-    l
+    callSendAPI(messageData);
   } else {
     next.apply(this, [recipientId, ...args]);
   }
@@ -513,7 +460,11 @@ function sendHiMessage(recipientId) {
     },
     message: {
       text: `
-Hey there, how can i assit?
+Congrats on setting up your Messenger Bot!
+
+Right now, your bot can only respond to a few words. Try out "quick reply", "typing on", "button", or "image" to see how they work. You'll find a complete list of these commands in the "app.js" file. Anything else you type will just be mirrored until you create additional commands.
+
+For more details on how to create commands, go to https://developers.facebook.com/docs/messenger-platform/reference/send-api.
       `
     }
   }
