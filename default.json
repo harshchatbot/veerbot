@@ -1,7 +1,0 @@
-
-{
-    "appSecret": "e7e555c85d2587fbcccbcbf4fddb7535",
-    "pageAccessToken": "EAAC52KZCQJrYBAGkDuRyFUxwZADXIGV7rWqV9rZAH5u4eXqS65Mns0BVYefwNBgPiKHy4GQidGc7Jc0ZArEJQdYvbGV3rrGXwCWqxXibQJbLc7actHltUBw5YHlgMRW3wppux6LENmtyuLsnpf3ZCZCTiCFAsdEZCwZCUZAzmfQgM2AZDZD",
-    "validationToken": "TOKEN",
-    "serverURL": "https://veerbot.herokuapp.com/webhook"
-}
