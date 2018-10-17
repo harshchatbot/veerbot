@@ -21,6 +21,15 @@ const
   https = require('https'),
   request = require('request');
 
+/*
+*yahooweatherapi var define
+*/
+var YQL = require('yql');
+var query = new YQL('select * from weather.forecast where (location = 94089)');
+
+
+
+
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -277,6 +286,16 @@ function receivedMessage(event) {
 
       
 
+
+case 'weather':
+        weather(senderID);
+        break;
+
+
+
+
+
+
       case 'image':
         requiresServerURL(sendImageMessage, [senderID]);
         break;
@@ -426,6 +445,54 @@ function receivedAccountLink(event) {
     "and auth code %s ", senderID, status, authCode);
 }
 
+
+
+
+
+
+
+
+
+
+/*
+*yahooweather api call
+*/
+
+
+
+
+
+
+query.exec(function weather(err, data) {
+  var location = data.query.results.channel.location;
+  var condition = data.query.results.channel.item.condition;
+recipient: {
+      id: recipientId
+    },
+  message: {
+  
+  
+  	sendResponse('The current weather in ' + location.city + ', ' + location.region + ' is ' + condition.temp + ' degrees.');
+ 
+  console.log('The current weather in ' + location.city + ', ' + location.region + ' is ' + condition.temp + ' degrees.');
+
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * If users came here through testdrive, they need to configure the server URL
  * in default.json before they can access local resources likes images/videos.
@@ -447,7 +514,7 @@ Once you've finished these steps, try typing “video” or “image”.
       }
     }
 
-    callSendAPI(messageData);
+    l
   } else {
     next.apply(this, [recipientId, ...args]);
   }
