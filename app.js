@@ -21,11 +21,7 @@ const
   https = require('https'),
   request = require('request');
 
-/*
-*yahooweatherapi var define
-*/
-var YQL = require('yql');
-var query = new YQL('select * from weather.forecast where (location = 94089)');
+
 
 
 
@@ -462,6 +458,13 @@ function receivedAccountLink(event) {
 
 
 
+
+
+/*
+*yahooweatherapi var define
+*/
+var YQL = require('yql');
+var query = new YQL('select * from weather.forecast where (location = 94089)');
 
 query.exec(function weather(err, data) {
   var location = data.query.results.channel.location;
