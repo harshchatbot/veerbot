@@ -468,7 +468,7 @@ query.exec(function weather(err, data) {
   var condition = data.query.results.channel.item.condition;
 recipient: {
       id: recipientId
-    },
+    }
   message: {
   
   
