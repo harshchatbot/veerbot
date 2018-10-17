@@ -468,16 +468,16 @@ var query = new YQL('select * from weather.forecast where (location = 94089)');
 
 query.exec(function weather(err, data) {
   var location = data.query.results.channel.location;
-  var condition = data.query.results.channel.item.condition;
+  var info = data.query.results.channel.item.condition;
 recipient: {
       id: recipientId
     }
   message: {
   
   
-  	sendResponse('The current weather in ' + location.city + ', ' + location.region + ' is ' + condition.temp + ' degrees.');
+  	sendResponse('The current weather in ' + location.city + ', ' + location.region + ' is ' + info.temp + ' degrees.');
  
-  console.log('The current weather in ' + location.city + ', ' + location.region + ' is ' + condition.temp + ' degrees.');
+  console.log('The current weather in ' + location.city + ', ' + location.region + ' is ' + info.temp + ' degrees.');
 
 }
 });
