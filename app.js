@@ -62,7 +62,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 
 
 app.get('/', function (req, res) {
-  res.send('hye harsh, App is working fine')
+  res.send('hye harsh')
 })
 
 
@@ -272,20 +272,14 @@ function receivedMessage(event) {
     switch (messageText.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
       case 'hello':
       case 'hi':
-	  case 'hey':
-	  case 'heya':
-	  case 'hola':
         sendHiMessage(senderID);
         break;
 
 		
-	case 'your name':
-     	 case 'what is your name?':
-	  case 'may i know your name':
-	  case 'tell me your name':
+	case 'name':
+        case 'name?':
         sendName(senderID);
         break;
-		
 		
 		/*
 		*  input of addition of two numbers
@@ -491,27 +485,6 @@ Hello there, How may i assist?
       `
     }
   }
-  
-  
-  
-  
-  
-  function sendName(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: `
-My name is Krishna
-      `
-    }
-  }
-  
-  
-  
-  
-  
 
 
 
@@ -543,6 +516,20 @@ function handleMessage(message) {
 
 
 
+
+
+
+function sendName(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: `
+My name is Krishna
+      `
+    }
+  }
 
 
 
