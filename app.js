@@ -485,6 +485,22 @@ Hello there, How may i assist?
       `
     }
   }
+  
+  
+  
+  function sendName(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: 
+`My name is Krishna`
+}
+}	   
+}
+	
+	
 
 
 
@@ -514,19 +530,6 @@ function handleMessage(message) {
 
 
 
-
-
-function sendName(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: 
-`My name is Krishna`
-}
-}	   
-}
 
 
 
