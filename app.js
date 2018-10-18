@@ -542,7 +542,7 @@ sum=Number(x)+Number(y);
 alert("SUM is: " + sum);
 }
 
-console.log(addTwoNumbers());
+console.log("Running function addnumbers");
 
 			
 	
