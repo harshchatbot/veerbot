@@ -289,7 +289,7 @@ function receivedMessage(event) {
 	  case 'sub':
 	  case 'subtract':
 	  case '-':
-        addnumbers(senderID);
+        addnumbers(addnumbers, [senderID]);
         break;
 		
       
@@ -518,8 +518,6 @@ function handleMessage(message) {
 
 
 
-
-
 /*
  * Addition of two numbers function
  *
@@ -531,8 +529,8 @@ function addnumbers(recipientId) {
     recipient: {
       id: recipientId
     },
-    message: {
-      text: 
+    payload: {
+	
 			function addTwoNumbers(num1,num2)
 {
 var x=document.getElementById(num1).value;
@@ -544,7 +542,10 @@ console.log("Running function addnumbers");
 }
 }
 }	   
+};
+callSendAPI(messageData);
 }
+
 	/*
 	* callSendAPI(messageData);
 	*/
