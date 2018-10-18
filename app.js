@@ -62,7 +62,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 
 
 app.get('/', function (req, res) {
-  res.send('hye harsh')
+  res.send('hye harsh, App is working fine')
 })
 
 
@@ -279,11 +279,11 @@ function receivedMessage(event) {
         break;
 
 		
-		 case 'your name':
-      case 'what is your name?':
+	case 'your name':
+     	 case 'what is your name?':
 	  case 'may i know your name':
 	  case 'tell me your name':
-        sendname(senderID);
+        sendName(senderID);
         break;
 		
 		
@@ -496,14 +496,14 @@ Hello there, How may i assist?
   
   
   
-  function sendname(recipientId) {
+  function sendName(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
       text: `
-My name is Krishna..
+My name is Krishna
       `
     }
   }
@@ -1022,6 +1022,6 @@ function callSendAPI(messageData) {
 // certificate authority.
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
-};
+});
 
 module.exports = app;
