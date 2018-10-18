@@ -272,19 +272,9 @@ function receivedMessage(event) {
     switch (messageText.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
       case 'hello':
       case 'hi':
-	  case 'hey':
-	  case 'heya':
-	  case 'hola':
         sendHiMessage(senderID);
         break;
 
-		
-		 case 'your name':
-      case 'what is your name?':
-	  case 'may i know your name':
-	  case 'tell me your name':
-        sendname(senderID);
-        break;
 		
 		
 		/*
@@ -491,27 +481,6 @@ Hello there, How may i assist?
       `
     }
   }
-  
-  
-  
-  
-  
-  function sendname(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: `
-My name is Krishna..
-      `
-    }
-  }
-  
-  
-  
-  
-  
 
 
 
