@@ -540,11 +540,8 @@ var y=document.getElementById(num2).value;
 var sum=0;
 sum=Number(x)+Number(y);
 alert("SUM is: " + sum);
-}
-
 console.log("Running function addnumbers");
-
-			
+}
 	
     }
 	callSendAPI(messageData);
