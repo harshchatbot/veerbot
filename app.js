@@ -62,7 +62,8 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 
 
 app.get('/', function (req, res) {
-  res.send('hye harsh')
+  res.send('hye harsh application in working fine')
+  console.log("application is running now")
 })
 
 
@@ -501,7 +502,7 @@ Hello there, How may i assist?
 `My name is Krishna`
 }
 }    
-}
+
   
   
 
