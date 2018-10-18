@@ -272,30 +272,33 @@ function receivedMessage(event) {
     switch (messageText.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
       case 'hello':
       case 'hi':
+      case 'hey':
+      case 'heya':
+      case 'hola':
         sendHiMessage(senderID);
         break;
 
-		
-	case 'name':
+    
+        case 'name':
         case 'name?':
         sendName(senderID);
         break;
-		
-		/*
-		*  input of addition of two numbers
-		*/
-		
-		
-		case 'plus':
-		case '+':
+    
+    /*
+    *  input of addition of two numbers
+    */
+    
+    
+    case 'plus':
+    case '+':
       case 'multiply':
-	  case '*':
-	  case 'sub':
-	  case 'subtract':
-	  case '-':
+    case '*':
+    case 'sub':
+    case 'subtract':
+    case '-':
         addnumbers(senderID);
         break;
-		
+    
       
 
       case 'image':
@@ -497,10 +500,10 @@ Hello there, How may i assist?
       text: 
 `My name is Krishna`
 }
-}	   
+}    
 }
-	
-	
+  
+  
 
 
 
@@ -552,7 +555,7 @@ function addnumbers(recipientId) {
     },
     message: {
       text: 
-			function addTwoNumbers(num1,num2)
+      function addTwoNumbers(num1,num2)
 {
 var x=document.getElementById(num1).value;
 var y=document.getElementById(num2).value;
@@ -562,11 +565,11 @@ alert("SUM is: " + sum);
 console.log("Running function addnumbers");
 }
 }
-}	   
+}    
 }
-	/*
-	* callSendAPI(messageData);
-	*/
+  /*
+  * callSendAPI(messageData);
+  */
   
 
 
