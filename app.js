@@ -516,20 +516,18 @@ function handleMessage(message) {
 
 
 
-
-
-
 function sendName(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      text: `
-My name is Krishna
-      `
-    }
-  }
+      text: 
+`My name is Krishna`
+}
+}	   
+}
+
 
 
 
