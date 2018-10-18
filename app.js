@@ -542,10 +542,13 @@ sum=Number(x)+Number(y);
 alert("SUM is: " + sum);
 console.log("Running function addnumbers");
 }
-	
-    }
-	callSendAPI(messageData);
-  }
+}
+}	   
+}
+	/*
+	* callSendAPI(messageData);
+	*/
+  
 
 
 
