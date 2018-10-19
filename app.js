@@ -285,21 +285,6 @@ function receivedMessage(event) {
         break;
         
     
-    /*
-    *  input of addition of two numbers
-    */
-    
-    
-    case 'plus':
-    case '+':
-      case 'multiply':
-    case '*':
-    case 'sub':
-    case 'subtract':
-    case '-':
-        addnumbers(senderID);
-        break;
-    
       
 
       case 'image':
@@ -535,55 +520,6 @@ function handleMessage(message) {
 
 
 
-
-
-
-
-
-
-
-
-
-/*
- * Addition of two numbers function
- *
- */
-
-
-function addnumbers(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: 
-      function addTwoNumbers(num1,num2)
-{
-var x=document.getElementById(num1).value;
-var y=document.getElementById(num2).value;
-var sum=0;
-sum=Number(x)+Number(y);
-alert("SUM is: " + sum);
-console.log("Running function addnumbers");
-}
-}
-}    
-}
-  /*
-  * callSendAPI(messageData);
-  */
-  
-
-
-
-
-
-
-
-
-
-  
-  
 
 
 
