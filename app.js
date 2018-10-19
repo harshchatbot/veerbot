@@ -62,8 +62,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 
 
 app.get('/', function (req, res) {
-  res.send('hye harsh application in working fine')
-  console.log("application is running now")
+  res.send('hye harsh')
 })
 
 
@@ -273,18 +272,26 @@ function receivedMessage(event) {
     switch (messageText.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
       case 'hello':
       case 'hi':
-      case 'hey':
-      case 'heya':
-      case 'hola':
         sendHiMessage(senderID);
         break;
 
-    
-      case 'name':
-       sendName(senderID)
+		
+		
+		/*
+		*  input of addition of two numbers
+		*/
+		
+		
+		case 'plus':
+		case '+':
+      case 'multiply':
+	  case '*':
+	  case 'sub':
+	  case 'subtract':
+	  case '-':
+        addnumbers(senderID);
         break;
-        
-    
+		
       
 
       case 'image':
@@ -474,23 +481,6 @@ Hello there, How may i assist?
       `
     }
   }
-  }
-  
-  
-function sendName(recipientId){
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: `
-My name is Krishna
-`
-    }
-  }
-  }
-  
-  
 
 
 
@@ -506,13 +496,70 @@ function handleMessage(message) {
   } else { 
     // default logic
   }
-};
+}
+
+
+
+
+
+
+
 
   callSendAPI(messageData);
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*
+ * Addition of two numbers function
+ *
+ */
+
+
+function addnumbers(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: 
+			function addTwoNumbers(num1,num2)
+{
+var x=document.getElementById(num1).value;
+var y=document.getElementById(num2).value;
+var sum=0;
+sum=Number(x)+Number(y);
+alert("SUM is: " + sum);
+console.log("Running function addnumbers");
+}
+}
+}	   
+}
+	/*
+	* callSendAPI(messageData);
+	*/
+  
+
+
+
+
+
+
+
+
+
+  
+  
 
 
 
