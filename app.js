@@ -506,14 +506,7 @@ function handleMessage(message) {
   } else { 
     // default logic
   }
-}
-
-
-
-
-
-
-
+};
 
   callSendAPI(messageData);
 }
