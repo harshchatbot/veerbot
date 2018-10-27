@@ -640,7 +640,7 @@ callSendAPI(messageData);
 
 
 function timestamp(recipientId) {
-  response = another.timestamp();
+  var response = another.timestamp();
     callSendAPI(senderID,response);
         
   
