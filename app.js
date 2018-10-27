@@ -19,7 +19,6 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),
-  http = require('http'),
   request = require('request');
 
  //  for local     var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
@@ -646,8 +645,8 @@ function timestamp(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"hi buddy current time is",
-    another.timestamp();
+      "text":"hi buddy current time is" + another.timestamp(),
+    
     }
   };
     callSendAPI(messageData);
