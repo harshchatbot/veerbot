@@ -21,10 +21,10 @@ const
   https = require('https'),
   request = require('request');
 
- //  for local     var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
+ //  for local     
+ var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
   
-  //for git and heroku     
-var another = require('./functions.js');
+  //for git and heroku     var another = require('./functions.js');
 
 
 
@@ -344,7 +344,7 @@ function receivedMessage(event) {
 
         case 'current time':
         case 'current time?':
-        another.timestamp(senderID);
+        timestamp(senderID);
         break;
       
 
@@ -607,6 +607,27 @@ console.log("Running function addnumbers");
   * callSendAPI(messageData);
   */
   
+
+
+
+
+
+
+
+
+function timestamp(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: 
+    console.log('Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))
+  }
+};
+
+callSendAPI(messageData);
+}
 
 
 
