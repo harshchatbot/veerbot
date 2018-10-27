@@ -646,12 +646,12 @@ function timestamp(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"hi buddy current time is" + response,
+      "text":"hi buddy current time is" ,
       
     
     }
   };
-    callSendAPI(messageData);
+    callSendAPI(messageData,response);
         
   
 }
