@@ -345,7 +345,7 @@ function receivedMessage(event) {
         case 'current time':
         case 'current time?':
         another.timestamp(senderID);
-    
+        break;
       
 
       case 'image':
