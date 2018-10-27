@@ -640,16 +640,18 @@ callSendAPI(messageData);
 
 
 function timestamp(recipientId) {
+  var response = another.timestamp();
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      "text":"hi buddy current time is" ,
+      "text":"hi buddy current time is" + response,
+      
     
     }
   };
-    callSendAPI(messageData,another.timestamp());
+    callSendAPI(messageData);
         
   
 }
