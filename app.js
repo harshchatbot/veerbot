@@ -21,12 +21,57 @@ const
   https = require('https'),
   request = require('request');
 
+ //  for local     var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
+  
+  //for git and heroku     
+var another = require('./functions.js');
+
+
+
+
+  // chatbot module editing after creating db file index.js
+  // var BotSystem = require('./routes/db/index.js');
+
 
 var app = express();
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 5432);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
+
+
+
+
+
+
+// init chatbot on top of bot section
+// var system = new BotSystem();
+
+// Now will connect to postgres DB
+// system.connectToDB();
+
+
+//var parse = require('pg-connection-string').parse;
+
+// var config = parse('postgres://qokezostymfzhl:4b68816ad2118d0a9945afe846ff1a6704425ac891976b5a3162d4c8969fe149@ec2-54-83-3-101.compute-1.amazonaws.com:5432/dabdf4hps4beb')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * Be sure to setup your config values before running this code. You can
@@ -62,7 +107,8 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 
 
 app.get('/', function (req, res) {
-  res.send('hye harsh')
+  res.send('hye harsh application in working fine')
+  console.log("application is running now")
 })
 
 
@@ -272,26 +318,34 @@ function receivedMessage(event) {
     switch (messageText.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
       case 'hello':
       case 'hi':
+      case 'hey':
+      case 'heya':
+      case 'hola':
         sendHiMessage(senderID);
         break;
 
-		
-		
-		/*
-		*  input of addition of two numbers
-		*/
-		
-		
-		case 'plus':
-		case '+':
+    
+    
+    /*
+    *  input of addition of two numbers
+    */
+    
+    
+    case 'plus':
+    case '+':
       case 'multiply':
-	  case '*':
-	  case 'sub':
-	  case 'subtract':
-	  case '-':
+    case '*':
+    case 'sub':
+    case 'subtract':
+    case '-':
         addnumbers(senderID);
         break;
-		
+
+
+        case 'current time':
+        case 'current time?':
+        another.timestamp(senderID);
+    
       
 
       case 'image':
@@ -481,6 +535,11 @@ Hello there, How may i assist?
       `
     }
   }
+  
+  
+
+  
+  
 
 
 
@@ -519,7 +578,6 @@ function handleMessage(message) {
 
 
 
-
 /*
  * Addition of two numbers function
  *
@@ -533,7 +591,7 @@ function addnumbers(recipientId) {
     },
     message: {
       text: 
-			function addTwoNumbers(num1,num2)
+      function addTwoNumbers(num1,num2)
 {
 var x=document.getElementById(num1).value;
 var y=document.getElementById(num2).value;
@@ -543,11 +601,11 @@ alert("SUM is: " + sum);
 console.log("Running function addnumbers");
 }
 }
-}	   
+}    
 }
-	/*
-	* callSendAPI(messageData);
-	*/
+  /*
+  * callSendAPI(messageData);
+  */
   
 
 
