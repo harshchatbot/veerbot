@@ -404,6 +404,7 @@ function receivedMessage(event) {
 
       default:
         sendTextMessage(senderID, messageText);
+        sendReadReceipt(senderID);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
