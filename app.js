@@ -641,11 +641,19 @@ callSendAPI(messageData);
 
 
 function timestamp(recipientId) {
-  var messageData = another.timestamp();
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"hi buddy current time is",
+    another.timestamp();
+    }
+  };
     callSendAPI(messageData);
         
   
-};
+}
 
 
 
