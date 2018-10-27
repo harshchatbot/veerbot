@@ -339,6 +339,7 @@ function receivedMessage(event) {
     case 'subtract':
     case '-':
         addnumbers(senderID);
+        sendReadReceipt(senderID);
         break;
 
 
@@ -623,7 +624,7 @@ function timestamp(recipientId) {
     message: {
       text: 
       `Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))`
-    console.log('Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))
+   // console.log('Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))
   }
 };
 
