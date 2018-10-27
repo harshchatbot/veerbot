@@ -624,8 +624,9 @@ function timestamp(recipientId) {
       id: recipientId
     },
     message: {
-      text: 
-      another.timestamp()
+      
+      "url" : another.timestamp(),
+      "is_reusable":true
       //`Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))`
    // console.log('Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))
   }
