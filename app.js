@@ -617,6 +617,7 @@ console.log("Running function addnumbers");
 
 
 
+/*
 
 function timestamp(recipientId) {
   var messageData = {
@@ -635,9 +636,15 @@ function timestamp(recipientId) {
 callSendAPI(messageData);
 }
 
+*/
 
 
-
+function timestamp(recipientId) {
+  response = another.timestamp();
+    callSendAPI(senderID,response);
+        
+  
+};
 
 
 
