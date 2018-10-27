@@ -21,10 +21,10 @@ const
   https = require('https'),
   request = require('request');
 
- //  for local     
- var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
+ //  for local     var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
   
-  //for git and heroku     var another = require('./functions.js');
+  //for git and heroku    
+var another = require('./functions.js');
 
 
 
