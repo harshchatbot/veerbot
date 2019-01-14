@@ -21,13 +21,16 @@ const
   https = require('https'),
   request = require('request');
 
- //  for local     var another = require('C:/Users/Pragya/Desktop/Veerbot/node/functions/functions.js');
+ //  for local     
+ var another = require('./functions/functions.js');
   
-  //for git and heroku    
-var another = require('./functions.js');
+  //for git and heroku      var another = require('./functions.js');
 
 
+var numbersadd = require('./functions/numbersadd.js');
 
+
+// var database = require('./dbcrudpostgres/create.js');
 
   // chatbot module editing after creating db file index.js
   // var BotSystem = require('./routes/db/index.js');
@@ -43,6 +46,12 @@ app.use(express.static('public'));
 
 
 
+// for db heroku postgresql connection
+const router = express.Router();
+const pg = require('pg');
+const path = require('path');
+
+var connectionString  = 'postgres://qokezostymfzhl:4b68816ad2118d0a9945afe846ff1a6704425ac891976b5a3162d4c8969fe149@ec2-54-83-3-101.compute-1.amazonaws.com:5432/dabdf4hps4beb' ;
 
 // init chatbot on top of bot section
 // var system = new BotSystem();
@@ -54,19 +63,6 @@ app.use(express.static('public'));
 //var parse = require('pg-connection-string').parse;
 
 // var config = parse('postgres://qokezostymfzhl:4b68816ad2118d0a9945afe846ff1a6704425ac891976b5a3162d4c8969fe149@ec2-54-83-3-101.compute-1.amazonaws.com:5432/dabdf4hps4beb')
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -326,7 +322,34 @@ function receivedMessage(event) {
         break;
 
     
-    
+
+      case 'weather':
+      case 'what is the weather':
+      case 'weather in city':
+      sendTextMessage(senderID,weather.YahooWeather());
+      break;
+
+  
+      case 'apitest':
+     // case 'what is the weather':
+     // case 'weather in city':
+      sendTextMessage(senderID,weather.YahooWeather());
+      break;
+
+
+
+
+
+/*
+
+  case 'database':
+  sendTextMessage(senderID,database.pool.connect());
+      break;
+
+*/
+
+
+
     /*
     *  input of addition of two numbers
     */
@@ -340,14 +363,66 @@ function receivedMessage(event) {
     case 'subtract':
     case '-':
         addnumbers(senderID);
-        sendReadReceipt(senderID);
         break;
+
+
+        case 'addition':
+        case 'add':
+        sendTextMessage(senderID,another.addition());
+     //   calling of function is working fine here take reference to call other diferent functions from here
+        break;
+
+
+
+
+        case 'nasa':
+        case 'nasaapi':
+        sendTextMessage(senderID,another.nasaapi());
+     //   calling of function is working fine here take reference to call other diferent functions from here
+        break;
+
+
+
+        case 'techfi':
+        case 'your website':
+        sendTextMessage(senderID,another.techfi());
+     //   calling of function is working fine here take reference to call other diferent functions from here
+        break;
+
 
 
         case 'current time':
         case 'current time?':
-        timestamp(senderID);
+        case 'what is current time?':
+        case 'what is current time':
+        case 'what is the current time':
+       // timestamp(senderID);
+       // timestamp(senderID, 'hi time is' + another.timestamp());
+       sendTextMessage(senderID,another.timestamp());
         break;
+
+
+
+        case 'current date':
+        case 'what is todays date':
+        case 'what is the current date':
+        case 'current date?':
+        sendTextMessage(senderID,another.currentDate());
+        break;
+        //   calling of function is working fine here take reference to call other diferent functions from here
+
+
+
+        case 'name?':
+        case 'your name?':
+        case 'what is your name?':
+        case 'name':
+        case 'your name':
+        case 'what is your name':
+        sendTextMessage(senderID, "My name is Krishna");
+        sendReadReceipt(senderID);
+        break;
+
       
 
       case 'image':
@@ -581,11 +656,86 @@ function handleMessage(message) {
 
 
 
+// Most important it is call function using payload url remember this so to call functions use pay load and then url
+
+
+/*
+function numbersaddTemplate(recipientId) {
+  var messageData = {
+    
+      
+    recipient: {
+      id: recipientId
+    },
+    message: {
+        
+            "type":"template",
+            "payload":{
+                "url": numbersadd.addition(senderID),
+                "is_reusable":true
+            }
+        }
+
+    };
+    console.log("numbersadd");
+callSendAPI(messageData);
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
 /*
  * Addition of two numbers function
  *
  */
+ function addnumbers(recipientId) {
 
+
+
+
+    app.post('/webhook', function(req, res){
+       
+        response = {
+            first_name : req.query.first_name,
+            last_name : req.query.last_name,
+            gender: req.query.gender,
+            call_to_actions:[
+              {
+                "payload":"welcome_payload"
+              }
+             ]
+
+
+            };
+
+
+
+
+            console.log(response);
+
+
+
+           // res.end(JSON.stringify(response));
+    });
+
+    callSendAPI(messageData);
+}
+
+  
+
+
+
+/*
 
 function addnumbers(recipientId) {
   var messageData = {
@@ -606,55 +756,43 @@ console.log("Running function addnumbers");
 }
 }    
 }
+
+*/
+
+
   /*
   * callSendAPI(messageData);
   */
   
 
 
-
-
-
-
-
 /*
-
 function timestamp(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      
-      "url" : another.timestamp(),
-      
-      //`Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))`
-   // console.log('Current Time in Unix Timestamp: ' + Math.floor(Date.now() / 1000))
-  }
-};
+    
 
-callSendAPI(messageData);
-}
+var response
+var senderID
 
-*/
-
-
-function timestamp(recipientId) {
-  var response = another.timestamp();
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
       "text":"hi buddy current time is" ,
+      "url": another.timestamp(response,senderID),
+     // "is_reusable":true
       
     
     }
   };
-    callSendAPI(messageData,response);
+    callSendAPI(messageData);
         
   
 }
+
+*/
+
+
 
 
 
@@ -810,7 +948,7 @@ function sendButtonMessage(recipientId) {
           text: "This is harsh performing UAT",
           buttons:[{
             type: "web_url",
-            url: "https://www.oculus.com/en-us/rift/",
+            url: "https://www.tehfi.club",
             title: "Open Web URL"
           }, {
             type: "postback",
