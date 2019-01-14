@@ -22,9 +22,10 @@ const
   request = require('request');
 
  //  for local     
- var another = require('./functions/functions.js');
+// var another = require('./functions/functions.js');
   
-  //for git and heroku      var another = require('./functions.js');
+  //for git and heroku      
+var another = require('./functions.js');
 
 
 var numbersadd = require('./functions/numbersadd.js');
