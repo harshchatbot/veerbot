@@ -1,0 +1,47 @@
+{
+  "name": "messenger-get-started",
+  "version": "1.0.0",
+  "description": "My chatbot",
+  "main": "app.js",
+  "scripts": {
+    "start": "supervisor ./bin/www",
+    "lint": "jshint --exclude node_modules .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "NODE_ENV": "development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/veerbot.git"
+  },
+  "author": "Facebook",
+  "license": "ISC",
+  "dependencies": {
+    "actions-on-google": "2.2.0",
+    "body-parser": "^1.15.0",
+    "config": "^1.31.0",
+    "connect": "^3.6.6",
+    "dialogflow-fulfillment": "0.5.0",
+    "ejs": "^2.4.2",
+    "express": "^4.16.4",
+    "mime": "^2.4.0",
+    "node-nlp": "^2.3.1",
+    "oauth-signature": "^1.5.0",
+    "pg": "^7.8.0",
+    "pg-connection-string": "^2.0.0",
+    "pg-format": "^1.0.4",
+    "pg-pool": "^2.0.6",
+    "pool": "^0.4.1",
+    "prompt": "^1.0.0",
+    "putty": "^1.0.1",
+    "query": "^0.2.0",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "typescript": "^3.2.2",
+    "weather-yahoo": "^1.0.2",
+    "yql": "^1.0.2",
+    "yql-node": "^0.2.1"
+  },
+  "engines": {
+    "node": "8.11.3"
+  }
+}
