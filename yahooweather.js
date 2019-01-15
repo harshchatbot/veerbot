@@ -38,8 +38,11 @@ var options = { method: 'GET',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 var body_string = JSON.parse(body);
-  console.log(body_string.location,body_string.current_observation);
-  return (body_string.location,body_string.current_observation);
+var location = JSON.stringify(body_string.location);
+var forecasts = JSON.stringify(body_string.forecasts);
+console.log('City details        ' + location + '        forecasts        ' + forecasts);
+  //console.log(JSON.stringify(body_string.location),JSON.stringify(body_string.current_observation));
+  return ('City details        ' + location + '        forecasts        ' + forecasts);
   
 });
 
