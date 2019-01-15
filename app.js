@@ -335,7 +335,8 @@ function receivedMessage(event) {
       case 'apitest':
      // case 'what is the weather':
      // case 'weather in city':
-      sendTextMessage(senderID,weather.YahooWeather());
+     // sendTextMessage(senderID,weather.YahooWeather());
+        callSendAPI(weather.YahooWeather());
       break;
 
 
