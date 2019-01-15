@@ -22,8 +22,27 @@ var timestamp = new Date().getTime() / 1000;
 
 
 
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'https://graph.facebook.com/me',
+  qs: { access_token: 'EAAWrrTFtaVcBAAL2e1rUJqlMT9T0T5mbPGHTxak1CIyyB6iSrtoABUH8oZAxCA4J6VTuKZCpbQ2LeV45Wer9ScKrorgMFoClq05ynBWRyqTUFDmOLTxJfcKRuKueCp1ckAwohWTUi88MZAlcK4ibTcQzDFtsAYNwRld6UF3zAZDZD' },
+  headers: 
+   { //'Postman-Token': '51a15e0d-4837-4757-b967-5d2124d33b04',
+     'cache-control': 'no-cache' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+  return (body);
+});
 
 
+
+
+
+/*
 
 
 
@@ -47,7 +66,7 @@ console.log('City details        ' + location + '        forecasts        ' + fo
 });
 
 
-
+*/
 
 
 
