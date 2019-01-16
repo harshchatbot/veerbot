@@ -23,7 +23,7 @@ const
 
  //  for local     var another = require('./functions/functions.js');
 
- var weather = require('./functions/yahooweather.js');
+ var weather = require('./yahooweather.js');
   
   //for git and heroku       
 var another = require('./functions.js');
