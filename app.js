@@ -26,7 +26,7 @@ const
   
   //for git and heroku      
 var another = require('./functions.js');
-var weather = require('./yahooweather.js');
+var weather = require('./functions/yahooweather.js');
 
 
 //var numbersadd = require('./numbersadd.js');
