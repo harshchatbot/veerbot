@@ -21,12 +21,12 @@ const
   https = require('https'),
   request = require('request');
 
- //  for local     
- var another = require('./functions/functions.js');
+ //  for local     var another = require('./functions/functions.js');
 
  var weather = require('./functions/yahooweather.js');
   
-  //for git and heroku       var another = require('./functions.js');
+  //for git and heroku       
+var another = require('./functions.js');
 
 
 var numbersadd = require('./functions/numbersadd.js');
