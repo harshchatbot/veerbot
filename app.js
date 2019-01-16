@@ -22,14 +22,14 @@ const
   request = require('request');
 
  //  for local     
-// var another = require('./functions/functions.js');
+ var another = require('./functions/functions.js');
+
+ var weather = require('./functions/yahooweather.js');
   
-  //for git and heroku      
-var another = require('./functions.js');
-var weather = require('./yahooweather.js');
+  //for git and heroku       var another = require('./functions.js');
 
 
-//var numbersadd = require('./numbersadd.js');
+var numbersadd = require('./functions/numbersadd.js');
 
 
 // var database = require('./dbcrudpostgres/create.js');
@@ -319,6 +319,7 @@ function receivedMessage(event) {
       case 'hey':
       case 'heya':
       case 'hola':
+      case 'namaste':
         sendHiMessage(senderID);
         sendReadReceipt(senderID);
         break;
@@ -328,15 +329,15 @@ function receivedMessage(event) {
       case 'weather':
       case 'what is the weather':
       case 'weather in city':
-      sendTextMessage(senderID,weather.YahooWeather());
+      //sendTextMessage(senderID,weather.YahooWeather());
+      callSendAPI(weather.YahooWeather());
       break;
 
   
       case 'apitest':
      // case 'what is the weather':
      // case 'weather in city':
-     // sendTextMessage(senderID,weather.YahooWeather());
-        callSendAPI(weather.YahooWeather());
+      sendTextMessage(senderID,weather.YahooWeather());
       break;
 
 
@@ -488,6 +489,18 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Message with attachment received");
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
